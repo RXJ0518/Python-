@@ -1,0 +1,133 @@
+find函数：检测字符串是否包含子字符串sub,如果包含子字符串则返回开始的索引值，否则返回-1
+语法格式如下：
+str.find(sub[,start[,end]])   sub:指定检索的字符串  start:开始索引，默认为0  end:结束索引，默认为字符串的长度
+例如：
+A1=‘hello world itheima and itheimaApp’
+A2=A1.find("itheima")
+print(A2)
+运行结果为：12
+
+index函数：与find函数功能相同，只不过是sub不在字符串中，会报错
+语法如下：
+str.index(sub,[start[,end]])
+
+count函数：用于统计字符串中sub子串出现的次数,结果返回为子字符串在字符串中出现的次数
+语法如下：
+str.count(sub,[start[,end]])
+例如：
+A1=‘hello world itheima and itheimaApp’
+A3=A1.count("itehima")
+print(A3)
+运行结果为：2
+
+replace函数：把旧的字符串替换成新字符串，结果是旧的字符串替换新的字符串后生成的新字符串
+语法格式如下：
+str.replace(old,new[,count])  count:可选参数，替换不超过count次
+例如：
+A1=‘hello world itheima and itheimaApp’
+A4=A1.replace('itheima','ITHEIMA',1)
+运行结果为：hello world ITHEIMA and itheimaApp
+
+split函数:指定分隔符对字符串进行切片，该函数的返回值是分隔后的字符串列表
+语法如下：
+str.split(sep=None,maxsplit=-1)    sep:分隔符，默认为所有空字符串，包括空格，换行，制表符    maxsplit:分割次数
+例如：
+A5=“this is string example ...wow!!!”
+print(A5.split())
+print(A5.split('i',1))
+print(A5.split('w'))
+运行结果为:['this' 'is' 'string' 'example...wow!!!']
+           ['th','s is string example...wow!!!']
+           ['this is string example...', 'o', '!!!']
+           
+ capitalize函数：将字符串的第一个字母变成大写，其他变成小写，该函数返回一个首字母大写的字符串
+ 语法格式如下：
+ str.capitalize()
+ A1=‘hello world itheima and itheimaApp’
+ A6=A1.capitalize()
+ print(A6)
+ 运行结果为：Hello world itheima and itheimaapp
+ 
+ title函数：返回"标题化"的字符串.也就是说所有单词都是以大写开始，其余字母均为小写
+ 语法格式如下：
+ str.title()
+ 例如：
+ A1='hello world itheima and itheimaApp’
+ A7=A1.title()
+ print(A7)
+ 运行结果为：Hello World Itheima And Itheimaapp
+ 
+ startswith函数：检查是否以指定子字符串开头，如果是返回True 否则返回False
+ 语法格式如下：
+ str.startswith(prefix[,start[.end]])   prefix：检测的字符串  
+例如：
+ A1=A1=‘hello world itheima and itheimaApp’
+ A8=A1.startswith('hello')
+运行结果为：True
+
+endswith函数:判断字符串是否以指定后缀结尾，如果以指定后缀结尾则返回True,否则返回False
+语法格式如下：
+str.endswitch(suffix,start[,end])   suffix检测的字符串 
+例如：
+A1=‘hello world itheima and itheimaApp’
+A9=A1.endswitch('App')
+A10=A1.endswitch('app')
+运行结果为：True
+            False
+            
+upper函数：将字符中的小写字母转为大写字母，返回小写字母转为大写字母后的字符串
+语法格式如下：
+str.upper()
+例如：
+A1=‘hello world itheima and itheimaApp’
+A11=A1.upper()
+print(A11)
+运行结果为：HELLO WORLD ITHEIMA AND ITHEIMAAPP
+
+Ijust函数：返回一个原字符串左对齐，并使用空格填充至指定长的的新字符串。如果指定的长度小于原字符串的长度，则返回原字符串
+语法格式如下：
+str.Ijust(width[,fillchar])  width:指定的字符串长度 fillchar:填充字符，默认为空格
+例如：
+A1=‘hello world itheima and itheimaApp’
+print(A1.ljust(50,"*"))
+运行结果为：hello world itheima and itheimaApp****************
+
+rjust函数：返回一个原字符串右对齐，并使用空格填充至指定长的的新字符串。如果指定的长度小于原字符串的长度，则返回原字符串
+语法格式如下：
+str.rjust(width[,fillchar])
+例如：
+A1=‘hello world itheima and itheimaApp’
+print(A1.rjust(50)
+
+center函数：返回一个宽带为width，原字符串中，以fillchar(默认为空格)填充左右两边字符串
+语法格式如下:
+str.center(width[,fillchar])
+A1=‘hello world itheima and itheimaApp’
+A12=A1.center(50)
+print(A12)
+运行结果为：        hello world itheima and itheimaApp      
+
+lstrip函数：接去掉字符串左边的空格或指定字符，返回的是一个新字符串
+语法格式如下：
+str.lstrip([chars])   chars:指定删除的字符，默认为空格
+例如:
+ A13='     hello world itheima and itheimaApp'
+ A14=A13.lstrip()
+ print(A14)
+ 运行结果为：hello world itheima and itheimaApp
+ 
+ rstrip函数：用于删除字符串末尾的指定字符，返回的是一个新的字符串
+ 格式语法如下:
+ str.rstrip([chars])
+ 例如：
+  A15='     hello world itheima and itheimaApp    '
+ A16=A15.lstrip()
+ 运行结果为：     hello world itheima and itheimaApp
+ 
+ strip函数：用于移除字符串头尾指定的字符，返回的是一个新字符串
+ 语法格式如下：
+ str.strip([chars])
+ A15='     hello world itheima and itheimaApp    '
+ A17=A15.strip()
+ print(A17)
+ 运行结果为：hello world itheima and itheimaApp
