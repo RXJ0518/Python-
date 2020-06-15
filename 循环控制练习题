@@ -1,0 +1,47 @@
+1. 判断回文
+1.1 题目要求
+使用input函数接收用户的输入，用户输入一个字符串，请判断这个字符串是不是回文，回文是一种对称的字符串，从左向右看和从右向左看是一样的，比如abcba
+1.2 思路分析
+解决问题的关键在于回文的对称性，假设字符串是string，那么先比较string[0] 和 string[-1]，如果他们相等，则继续比较string[1]和string[-2]，这就需要对字符串进行遍历，由于回文的对称性，只需要遍历到一半就可以了
+1.3 示例代码如下：
+value = input("请输入一个字符串:")
+for i in range(len(value)//2):
+    if value[i] != value[-1-i]:
+        print('你输入的{value}不是回文'.format(value=value))
+        break
+else:
+    print('你输入的{value}是回文'.format(value=value))
+
+2. 整数翻转
+2.1 题目要求
+使用input函数接收用户的输入，用户输入一个整数，请使用while循环获得整数翻转后的结果，比如用户输入12345，程序最后输出54321.
+2.2 思路分析
+在不借助列表的情况下，处理整数的翻转，可以使用// 和 % 运算符， 整数除以10，整体向右偏移，整数对10取模，可以得到个位数。
+2.3.1示例（列表）代码如下：
+string = "12345"
+lst = list(string)
+lst = lst[::-1]
+print(''.join(lst))
+
+2.3.2示例普通代码如下:
+value = input("请输入一个整数:")
+value = int(value)
+reverse_num = 0 #创建一个变量，好算出最后倒过来的数
+while value > 0:
+    last_num = value % 10 #求个位数
+    value //= 10        #求整数
+    reverse_num = reverse_num*10 + last_num  #向右移
+print(reverse_num)
+
+3. 寻找缺失数
+3.1 题目要求
+有一组数字，从0到10, 中减少了一个数，顺序也被打乱，放在一个列表里，请找出丢失的数字。
+lst = [4, 3, 1, 2, 0, 8, 5, 9, 6, 10]
+3.2 解法1 利用递增序列求和
+把7放回序列中，那么整个序列的和就是(n*(n+1))/2 ,n = 10, 结果为 55，现在序列里没有7 ，剩余的数加在一起是48, 55-48恰好就是缺失的数字7
+3.3示例代码如下：
+lst = [4, 3, 1, 2, 0, 8, 5, 9, 6, 10]
+max_value = max(lst)  #求出列表里最大的数
+sum_value = max_value*(max_value+1)//2 #求出序列的和
+miss_value = sum_value - sum(lst)      #求出缺失的数
+print(miss_value)
